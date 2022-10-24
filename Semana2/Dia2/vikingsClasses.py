@@ -73,7 +73,7 @@ class War:
         s = random.choice(self.saxonArmy)
         Viking.receiveDamage(self, s.strength)
         if v.health == 0:
-            self.vikingArmy.remove(Viking)
+            self.vikingArmy.remove(v)
         return Viking.receiveDamage(self, s.strength)
     
     def showStatus(self):
