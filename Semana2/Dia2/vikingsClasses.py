@@ -52,3 +52,10 @@ class War:
     def __init__(self, vikingArmy = [], saxonArmy = []):
         self.vikingArmy = vikingArmy
         self.saxonArmy = saxonArmy
+
+    def addViking(self, viking):
+        self.vikingArmy.append(viking)
+    
+    def addSaxon(self, saxon):
+        self.saxonArmy.append(saxon)
+        
