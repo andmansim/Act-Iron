@@ -49,4 +49,6 @@ class Saxon(Soldier):
 
 # War
 class War:
-    pass
+    def __init__(self, vikingArmy = [], saxonArmy = []):
+        self.vikingArmy = vikingArmy
+        self.saxonArmy = saxonArmy
