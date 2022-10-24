@@ -53,8 +53,7 @@ class War:
     def __init__(self):
         self.vikingArmy = []
         self.saxonArmy = []
-        self.v = random.choice(self.vikingArmy)
-        self.s = random.choice(self.saxonArmy)
+        
 
     def addViking(self, viking):
         self.vikingArmy.append(viking)
@@ -63,17 +62,19 @@ class War:
         self.saxonArmy.append(saxon)
     
     def vikingAttack(self):
-        
-        resultado = self.s.receiveDamage(self.v.strength)
-        if self.s.health == 0:
-            self.saxonArmy.remove(self.s)
+        v = random.choice(self.vikingArmy)
+        s = random.choice(self.saxonArmy)
+        resultado = s.receiveDamage(v.strength)
+        if s.health == 0:
+            self.saxonArmy.remove(s)
         return resultado
     
     def saxonAttack(self):
-        
-        resultado = self.v.receiveDamage(self.s.strength)
-        if self.v.health == 0:
-            self.vikingArmy.remove(self.v)
+        v = random.choice(self.vikingArmy)
+        s = random.choice(self.saxonArmy)
+        resultado = v.receiveDamage(s.strength)
+        if v.health == 0:
+            self.vikingArmy.remove(v)
         return resultado
         
             
