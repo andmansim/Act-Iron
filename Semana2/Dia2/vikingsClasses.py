@@ -61,15 +61,15 @@ class War:
     
     def vikingAttack(self):
         Saxon.receiveDamage(self, Viking.attack(self))
-        if Soldier.receiveDamage() == 0:
+        if Saxon.receiveDamage() == 0:
             self.saxonArmy.pop()
-        return Viking.receiveDamage(self, Saxon.attack(self))
+        return Saxon.receiveDamage(self, Viking.attack(self))
     
     def saxonAttack(self):
-        Viking.receiveDamage(self, Viking.attack(self))
-        if Soldier.receiveDamage() == 0:
+        Viking.receiveDamage(self, Saxon.attack(self))
+        if Viking.receiveDamage() == 0:
             self.vikingArmy.pop()
-        return Saxon.receiveDamage(self, Viking.attack(self))
+        return Viking.receiveDamage(self, Saxon.attack(self))
     
     def showStatus(self):
         if len(self.saxonArmy) == 0:
