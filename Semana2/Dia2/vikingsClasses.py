@@ -30,9 +30,8 @@ class Viking(Soldier):
         else: 
             return str(self.name) + 'has died in act of combat '
         
-    
-
     def battleCry():
+        return  "Odin Owns You All!"
         
 
 # Saxon
