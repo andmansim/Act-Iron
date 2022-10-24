@@ -1,5 +1,5 @@
 import unittest
-from Semana2.Dia2.vikingsClasses import War, Viking, Saxon
+from vikingsClasses import War, Viking, Saxon
 from inspect import signature
 
 
