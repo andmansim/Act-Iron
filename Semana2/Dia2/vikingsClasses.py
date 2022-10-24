@@ -25,7 +25,7 @@ class Viking(Soldier):
     
     def receiveDamage(self, damage):
         self.health = self.health - damage
-        if Soldier.health != 0:
+        if self.health != 0:
             return str(self.name) + 'has received ' + str(damage) + ' points of damage'
         else: 
             return str(self.name) + 'has died in act of combat '
