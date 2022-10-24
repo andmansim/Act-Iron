@@ -19,8 +19,15 @@ class Soldier:
 # Viking
 
 class Viking(Soldier):
+    def __init__(self, health, strength, name):
+        super().__init__(health, strength)
+        self.name = name
     
-    pass
+    def receiveDamage(self, damage):
+        return super().receiveDamage(damage)
+
+    def battleCry():
+        
 
 # Saxon
 class Saxon:
