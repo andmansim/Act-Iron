@@ -26,10 +26,11 @@ class Viking(Soldier):
     
     def receiveDamage(self, damage):
         self.health = self.health - damage
-        if self.health != 0:
-            return str(self.name) + ' has received ' + str(damage) + ' points of damage'
-        else: 
+        if self.health <= 0:
             return str(self.name) + ' has died in act of combat'
+        else: 
+            return str(self.name) + ' has received ' + str(damage) + ' points of damage'
+            
         
     def battleCry(self):
         return  "Odin Owns You All!"
@@ -42,10 +43,11 @@ class Saxon(Soldier):
     
     def receiveDamage(self, damage):
         self.health = self.health - damage
-        if self.health != 0:
-            return  'A Saxon has received ' + str(damage) + ' points of damage'
-        else: 
+        if self.health <= 0:
             return 'A Saxon has died in combat'
+            
+        else: 
+            return  'A Saxon has received ' + str(damage) + ' points of damage'
 
 
 # War
@@ -62,19 +64,19 @@ class War:
         self.saxonArmy.append(saxon)
     
     def vikingAttack(self):
-        for i in range(len(self.vikingArmy)):
-        
-            resultado = self.saxonArmy[i].receiveDamage(self.vikingArmy[i].strength)
-            if self.saxonArmy[i].health == 0:
-                self.saxonArmy.remove(self.saxonArmy[i])
+        v = random.choice(self.vikingArmy)
+        s = random.choice(self.saxonArmy)
+        resultado = s.receiveDamage(v.strength)
+        if s.health == 0:
+            self.saxonArmy.remove(s)
         return resultado
     
     def saxonAttack(self):
-        for i in range(len(self.vikingArmy)):
-            
-            resultado = self.vikingArmy[i].receiveDamage(self.saxonArmy[i].strength)
-            if self.vikingArmy[i].health == 0:
-                self.vikingArmy.remove(self.vikingArmy[i])
+        v = random.choice(self.vikingArmy)
+        s = random.choice(self.saxonArmy)
+        resultado = v.receiveDamage(s.strength)
+        if v.health == 0:
+            self.vikingArmy.remove(v)
         return resultado
         
             
